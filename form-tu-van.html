@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Form Đăng Ký Tư Vấn - Mẹ Tôm Tép Tít</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  .form-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 26px;
+    box-shadow: 0 12px 35px rgba(52, 72, 54, 0.09);
+  }
+
+  .form-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .form-header h1 {
+    font-size: 32px;
+    color: var(--dark);
+    margin: 0 0 12px;
+  }
+
+  .form-header p {
+    color: var(--text);
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form-section {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #edf0e7;
+  }
+
+  .form-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 20px;
+  }
+
+  .section-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--green);
+    color: white;
+    font-weight: 800;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dce3d6;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    transition: border-color 0.2s ease;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(127, 168, 120, 0.1);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .form-row.full {
+    grid-template-columns: 1fr;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .checkbox-item input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+  }
+
+  .checkbox-item label {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .radio-item input[type="radio"] {
+    width: auto;
+    margin: 0;
+  }
+
+  .radio-item label {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .btn {
+    padding: 14px 30px;
+    border-radius: 14px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn.submit {
+    background: var(--green);
+    color: white;
+  }
+
+  .btn.submit:hover {
+    background: #6b9063;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(127, 168, 120, 0.3);
+  }
+
+  .btn.reset {
+    background: #f0f0f0;
+    color: var(--dark);
+  }
+
+  .btn.reset:hover {
+    background: #e0e0e0;
+  }
+
+  .success-message {
+    display: none;
+    background: #c6f6d5;
+    border: 1px solid #9ae6b4;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    color: #22543d;
+    text-align: center;
+  }
+
+  .success-message.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .required {
+    color: #e53e3e;
+  }
+
+  @media (max-width: 768px) {
+    .form-container {
+      padding: 20px;
+      margin: 20px 10px;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .form-header h1 {
+      font-size: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="nav">
+    <div class="logo">Mẹ Tôm Tép Tít</div>
+    <div class="nav-links">
+      <a href="index.html#ebook">Ebook</a><a href="index.html#coaching">Coaching</a><a href="index.html#review">Review</a><a href="index.html#dangky">Đăng ký</a>
+    </div>
+    <a class="cta" href="index.html#dangky">Inbox tư vấn</a>
+  </div>
+</header>
+
+<div class="form-container">
+  <div class="form-header">
+    <h1>📋 Chủ Ý Trước Khi Tư Vấn</h1>
+    <p>Giúp buổi tư vấn hiệu quả và đi sâu trong tâm. Vui lòng điền thông tin chi tiết sẽ giúp Hồng hiểu rõ tình hình của con bạn.</p>
+  </div>
+
+  <div class="success-message" id="successMessage">
+    ✓ Cảm ơn bạn đã gửi thông tin! Hồng sẽ liên hệ với bạn sớm nhất.
+  </div>
+
+  <form id="consultForm">
+    <!-- PHẦN 1: THÔNG TIN MẸ & BÉ -->
+    <div class="form-section">
+      <div class="section-title">
+        <span class="section-number">1</span>
+        <span>THÔNG TIN MẸ & BÉ</span>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="motherName">Họ tên mẹ <span class="required">*</span></label>
+          <input type="text" id="motherName" name="motherName" required />
+        </div>
+        <div class="form-group">
+          <label for="babyName">Tên bé (nếu có) <span class="required">*</span></label>
+          <input type="text" id="babyName" name="babyName" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="motherAge">Tuổi mẹ</label>
+          <input type="number" id="motherAge" name="motherAge" min="0" max="100" />
+        </div>
+        <div class="form-group">
+          <label for="babyBirthDate">Bé sinh ngày <span class="required">*</span></label>
+          <input type="date" id="babyBirthDate" name="babyBirthDate" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="gestationalWeek">Tuổi thai khi sinh (tuần) <span class="required">*</span></label>
+          <input type="number" id="gestationalWeek" name="gestationalWeek" min="0" max="40" required />
+        </div>
+        <div class="form-group">
+          <label for="birthWeight">Cân nặng lúc sinh (gram) <span class="required">*</span></label>
+          <input type="number" id="birthWeight" name="birthWeight" min="0" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="currentWeight">Cân nặng hiện tại (gram) <span class="required">*</span></label>
+          <input type="number" id="currentWeight" name="currentWeight" min="0" required />
+        </div>
+        <div class="form-group">
+          <label for="adjustedAge">Tuổi hiệu chỉnh hiện tại</label>
+          <input type="text" id="adjustedAge" name="adjustedAge" placeholder="VD: 2 tháng 15 ngày" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Hiện tại bé như thế nào?</label>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" id="nicu" name="conditions" value="nicu" />
+            <label for="nicu">Vừa xuất viện từ NICU</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="home" name="conditions" value="home" />
+            <label for="home">Đã về nhà</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="readmitted" name="conditions" value="readmitted" />
+            <label for="readmitted">Phải vào viện lại sau khi xuất viện</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="oxygen" name="conditions" value="oxygen" />
+            <label for="oxygen">Còn dùng oxy/các thiết bị hỗ trợ khác</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="otherInfo">Bệnh sử, tiền sử bác niêu kỳ khác của bé</label>
+        <textarea id="otherInfo" name="otherInfo" placeholder="Nếu có, xin mô tả chi tiết..."></textarea>
+      </div>
+    </div>
+
+    <!-- PHẦN 2: LỊCH SINH HOẠT HIỆN TẠI -->
+    <div class="form-section">
+      <div class="section-title">
+        <span class="section-number">2</span>
+        <span>LỊCH SINH HOẠT HIỆN TẠI</span>
+      </div>
+
+      <div class="form-group">
+        <label for="feedingSchedule">Lịch ăn hiện tại (ăn bao lâu/lần, bao lâu ăn 1 lần)</label>
+        <textarea id="feedingSchedule" name="feedingSchedule" placeholder="VD: Cho bú 15 phút, 3 giờ ăn 1 lần..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="sleepSchedule">Lịch ngủ hiện tại (ngủ bao lâu/lần, bao lâu ngủ 1 lần)</label>
+        <textarea id="sleepSchedule" name="sleepSchedule" placeholder="VD: Ngủ 2-3 tiếng, 4-5 tiếng tỉnh 1 lần..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="feedingType">Chế độ ăn hiện tại</label>
+        <div class="radio-group">
+          <div class="radio-item">
+            <input type="radio" id="breastfeeding" name="feedingType" value="breastfeeding" />
+            <label for="breastfeeding">Cho bú</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="bottlefeeding" name="feedingType" value="bottlefeeding" />
+            <label for="bottlefeeding">Cho bình sữa</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="mixedfeeding" name="feedingType" value="mixedfeeding" />
+            <label for="mixedfeeding">Cho bú + bình</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="milkType">Nếu dùng sữa công thức, sữa nào? (tên hiệu)</label>
+        <input type="text" id="milkType" name="milkType" placeholder="VD: S26, Nutricare Pro..." />
+      </div>
+
+      <div class="form-group">
+        <label for="digestion">Tình trạng tiêu hóa (có bị táo bón, tiêu chảy, khí, ợ...?)</label>
+        <textarea id="digestion" name="digestion" placeholder="Mô tả chi tiết..."></textarea>
+      </div>
+    </div>
+
+    <!-- PHẦN 3: VẤN ĐỀ CHÍNH BA MẸ ĐANG GẶP -->
+    <div class="form-section">
+      <div class="section-title">
+        <span class="section-number">3</span>
+        <span>VẤN ĐỀ CHÍNH BA MẸ ĐANG GẶP</span>
+      </div>
+
+      <div class="form-group">
+        <label for="mainIssue">Vấn đề kỳ nhất là gì? <span class="required">*</span></label>
+        <textarea id="mainIssue" name="mainIssue" placeholder="Hãy mô tả chi tiết vấn đề..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="otherIssues">Những vấn đề khác ba mẹ lo lắng</label>
+        <div class="checkbox-group">
+          <div class="checkbox-item">
+            <input type="checkbox" name="concernsChecklist" value="weight" />
+            <label>Tăng cân chậm</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" name="concernsChecklist" value="breathing" />
+            <label>Hô hấp - ho sặc sụa</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" name="concernsChecklist" value="sleep" />
+            <label>Khó ngủ, giấc ngủ không sâu</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" name="concernsChecklist" value="development" />
+            <label>Phát triển - sợ bé chậm</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" name="concernsChecklist" value="reflex" />
+            <label>Phản xạ - cử động bất thường</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" name="concernsChecklist" value="skin" />
+            <label>Da - nổi mẩn, chàm</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" name="concernsChecklist" value="mental" />
+            <label>Tâm lý - mẹ lo sợ, mất ngủ</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHẦN 4: BỆNH LỸ CỦA MẸ KHI MANG THAI -->
+    <div class="form-section">
+      <div class="section-title">
+        <span class="section-number">4</span>
+        <span>BỆNH LỸ CỦA MẸ KHI MANG THAI ĐANG ĐIỀU TRỊ</span>
+      </div>
+
+      <div class="form-group">
+        <label>Mẹ có mắc bệnh gì không khi mang thai?</label>
+        <div class="radio-group">
+          <div class="radio-item">
+            <input type="radio" id="noDisease" name="maternalDisease" value="no" checked />
+            <label for="noDisease">Không</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="yesDisease" name="maternalDisease" value="yes" />
+            <label for="yesDisease">Có</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="diseaseDetails">Nếu có, bệnh gì? Còn điều trị không?</label>
+        <textarea id="diseaseDetails" name="diseaseDetails" placeholder="VD: Tiểu đường thai kỳ, tăng huyết áp..."></textarea>
+      </div>
+    </div>
+
+    <!-- PHẦN 5: NHỮNG GÌ BA MẸ ĐÃ THỬ -->
+    <div class="form-section">
+      <div class="section-title">
+        <span class="section-number">5</span>
+        <span>NHỮNG GÌ BA MẸ ĐÃ THỬ</span>
+      </div>
+
+      <div class="form-group">
+        <label for="attempted">Ba mẹ đã áp dụng những phương pháp/sản phẩm nào?</label>
+        <textarea id="attempted" name="attempted" placeholder="VD: Dùng probiotics, xoa dầu, thay đổi lịch ăn..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="attemptedResults">Kết quả thế nào?</label>
+        <textarea id="attemptedResults" name="attemptedResults" placeholder="Cải thiện hay vẫn chưa?"></textarea>
+      </div>
+    </div>
+
+    <!-- PHẦN 6: LỰI TÍN & MONG MUỐN -->
+    <div class="form-section">
+      <div class="section-title">
+        <span class="section-number">6</span>
+        <span>LỰI TÍN & MONG MUỐN</span>
+      </div>
+
+      <div class="form-group">
+        <label for="expectation">Ba mẹ hy vọng sau tư vấn sẽ nhận được gì?</label>
+        <textarea id="expectation" name="expectation" placeholder="VD: Có kế hoạch cụ thể, bớt lo sợ, hiểu đúng về bé..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="concerns">Mong muốn thêm gì nữa từ Hồng?</label>
+        <textarea id="concerns" name="concerns" placeholder="Bất kỳ câu hỏi hoặc yêu cầu nào..."></textarea>
+      </div>
+    </div>
+
+    <!-- PHẦN 7: THÔNG TIN LIÊN HỆ -->
+    <div class="form-section">
+      <div class="section-title">
+        <span class="section-number">7</span>
+        <span>THÔNG TIN LIÊN HỆ</span>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Số điện thoại <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{10,}" placeholder="VD: 0912345678" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="VD: email@example.com" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="preferredContact">Cách liên hệ ưu tiên</label>
+        <div class="radio-group">
+          <div class="radio-item">
+            <input type="radio" id="facebook" name="preferredContact" value="facebook" />
+            <label for="facebook">Facebook</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="zalo" name="preferredContact" value="zalo" />
+            <label for="zalo">Zalo</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="phone-call" name="preferredContact" value="phone" />
+            <label for="phone-call">Gọi điện</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Ghi chú thêm</label>
+        <textarea id="notes" name="notes" placeholder="Bất cứ thông tin thêm nào..."></textarea>
+      </div>
+    </div>
+
+    <!-- CÁC NÚT HÀNH ĐỘNG -->
+    <div class="form-actions">
+      <button type="submit" class="btn submit">📨 Gửi thông tin</button>
+      <button type="reset" class="btn reset">Xóa</button>
+    </div>
+  </form>
+</div>
+
+<div class="floating">
+  <a href="index.html#dangky">Inbox</a>
+  <a href="index.html#ebook">Ebook</a>
+</div>
+
+<footer class="footer">
+  <h3>Mẹ Tôm Tép Tít</h3>
+  <p>Sinh non không đơn độc. Ba mẹ hiểu đúng, con được đồng hành đúng.</p>
+</footer>
+
+<script>
+  let lastSubmittedData = null;
+
+  // Xử lý submit form
+  document.getElementById('consultForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Thu thập dữ liệu form
+    const formData = new FormData(this);
+    const data = {
+      id: Date.now(),
+      motherName: formData.get('motherName'),
+      babyName: formData.get('babyName'),
+      motherAge: formData.get('motherAge') || null,
+      babyBirthDate: formData.get('babyBirthDate'),
+      gestationalWeek: formData.get('gestationalWeek'),
+      birthWeight: formData.get('birthWeight'),
+      currentWeight: formData.get('currentWeight'),
+      adjustedAge: formData.get('adjustedAge'),
+      conditions: formData.getAll('conditions'),
+      otherInfo: formData.get('otherInfo') || '',
+      feedingSchedule: formData.get('feedingSchedule'),
+      sleepSchedule: formData.get('sleepSchedule'),
+      feedingType: formData.get('feedingType') || '',
+      milkType: formData.get('milkType') || '',
+      digestion: formData.get('digestion') || '',
+      mainIssue: formData.get('mainIssue'),
+      concernsChecklist: formData.getAll('concernsChecklist'),
+      maternalDisease: formData.get('maternalDisease'),
+      diseaseDetails: formData.get('diseaseDetails') || '',
+      attempted: formData.get('attempted') || '',
+      attemptedResults: formData.get('attemptedResults') || '',
+      expectation: formData.get('expectation'),
+      concerns: formData.get('concerns') || '',
+      phone: formData.get('phone'),
+      email: formData.get('email') || '',
+      preferredContact: formData.get('preferredContact') || '',
+      notes: formData.get('notes') || '',
+      submittedAt: new Date().toISOString(),
+      submittedAtVN: new Date().toLocaleString('vi-VN')
+    };
+
+    // Lưu vào localStorage
+    const submissions = JSON.parse(localStorage.getItem('consultSubmissions') || '[]');
+    submissions.push(data);
+    localStorage.setItem('consultSubmissions', JSON.stringify(submissions));
+
+    // Lưu dữ liệu gần nhất để download
+    lastSubmittedData = data;
+
+    // In JSON ra console
+    console.log('📋 THÔNG TIN TƯ VẤN (JSON):', JSON.stringify(data, null, 2));
+
+    // Hiển thị thông báo thành công
+    const successMsg = document.getElementById('successMessage');
+    successMsg.classList.add('show');
+
+    // Scroll tới thông báo
+    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Cho phép download file JSON
+    showDownloadOption(data);
+
+    // Reset form sau 10 giây
+    setTimeout(() => {
+      this.reset();
+    }, 10000);
+  });
+
+  // Hàm hiển thị tùy chọn download
+  function showDownloadOption(data) {
+    const successMsg = document.getElementById('successMessage');
+
+    // Tạo nút download nếu chưa có
+    if (!document.getElementById('downloadJsonBtn')) {
+      const downloadBtn = document.createElement('button');
+      downloadBtn.id = 'downloadJsonBtn';
+      downloadBtn.className = 'btn submit';
+      downloadBtn.style.marginTop = '10px';
+      downloadBtn.style.background = '#2d6a4f';
+      downloadBtn.textContent = '⬇️ Tải file JSON';
+      downloadBtn.type = 'button';
+
+      downloadBtn.addEventListener('click', function() {
+        downloadJSON(data);
+      });
+
+      successMsg.appendChild(downloadBtn);
+    }
+  }
+
+  // Hàm download file JSON
+  function downloadJSON(data) {
+    if (!data) {
+      alert('Không có dữ liệu để tải!');
+      return;
+    }
+
+    const jsonString = JSON.stringify(data, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+
+    link.setAttribute('href', url);
+    link.setAttribute('download', `tham-van-${data.id}.json`);
+    link.style.visibility = 'hidden';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  // Tính tuổi hiệu chỉnh tự động
+  document.getElementById('babyBirthDate').addEventListener('change', function() {
+    const birthDate = new Date(this.value);
+    const gestationalWeek = parseInt(document.getElementById('gestationalWeek').value) || 40;
+
+    if (birthDate && gestationalWeek) {
+      // Tuổi hiệu chỉnh = (tuổi thật) - (40 - tuổi thai khi sinh)
+      const correctionWeeks = 40 - gestationalWeek;
+      const today = new Date();
+      const ageMs = today - birthDate;
+      const ageWeeks = Math.floor(ageMs / (7 * 24 * 60 * 60 * 1000));
+      const adjustedWeeks = ageWeeks - correctionWeeks;
+
+      if (adjustedWeeks >= 0) {
+        const months = Math.floor(adjustedWeeks / 4);
+        const weeks = adjustedWeeks % 4;
+        document.getElementById('adjustedAge').value = months + ' tháng ' + (weeks * 7) + ' ngày (xấp xỉ)';
+      }
+    }
+  });
+</script>
+</body>
+</html>
