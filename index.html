@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mẹ Tôm Tép Tít - Sinh non không đơn độc</title>
+<style>
+:root{
+  --green:#7FA878;--green2:#CFE4C8;--cream:#FFF9EF;--dark:#243528;--text:#425044;--pink:#F4C7BE;--white:#fff;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--cream);color:var(--text);line-height:1.65}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+.header{position:sticky;top:0;z-index:10;background:rgba(255,249,239,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e6eadf}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.logo{font-weight:800;color:var(--dark);font-size:20px}
+.nav-links{display:flex;gap:18px;font-size:14px}
+.nav .cta{background:var(--green);color:white;padding:10px 16px;border-radius:999px;font-weight:700}
+.hero{min-height:680px;background:linear-gradient(rgba(36,53,40,.45),rgba(36,53,40,.35)),url('https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1600&q=80') center/cover;display:flex;align-items:center}
+.hero-inner{max-width:1180px;margin:auto;padding:80px 20px;color:white}
+.badge{display:inline-block;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.45);padding:8px 14px;border-radius:999px;font-weight:700}
+.hero h1{font-size:56px;line-height:1.1;margin:22px 0 18px;max-width:760px}
+.hero p{font-size:20px;max-width:680px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;padding:14px 22px;border-radius:14px;font-weight:800}
+.btn.primary{background:var(--pink);color:#3d2f2c}
+.btn.secondary{background:white;color:var(--dark)}
+.section{max-width:1180px;margin:auto;padding:70px 20px}
+.section-title{text-align:center;margin-bottom:34px}
+.section-title h2{font-size:38px;line-height:1.2;color:var(--dark);margin:0}
+.section-title p{max-width:760px;margin:12px auto 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.card{background:white;border-radius:26px;padding:28px;box-shadow:0 12px 35px rgba(52,72,54,.09);border:1px solid #edf0e7}
+.image-box{height:230px;border-radius:22px;background:linear-gradient(135deg,#dcebd6,#fff7ec);display:flex;align-items:center;justify-content:center;color:#71806e;font-weight:800;text-align:center;margin-bottom:20px;border:2px dashed #a9c5a2}
+.card h3{font-size:24px;color:var(--dark);margin:0 0 10px}
+.price-list{font-size:19px}
+.price-line{display:flex;justify-content:space-between;gap:16px;border-bottom:1px dashed #dce3d6;padding:12px 0}
+.price-line b{white-space:nowrap;color:#2d6a4f}
+.feature{display:flex;gap:14px;margin:15px 0}
+.icon{width:34px;height:34px;border-radius:50%;background:var(--green2);display:flex;align-items:center;justify-content:center;flex:0 0 34px}
+.ebook-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.ebook{background:white;border-radius:18px;padding:14px;box-shadow:0 8px 24px rgba(52,72,54,.08)}
+.cover{height:160px;border-radius:14px;background:linear-gradient(160deg,#bcd7b7,#fff4df);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;color:#3f5a3c;padding:10px}
+.story{background:#eaf4e6;border-radius:34px;padding:42px}
+.testimonial{font-style:italic}
+.floating{position:fixed;right:18px;bottom:18px;z-index:20;display:flex;flex-direction:column;gap:10px}
+.floating a{background:#2d6a4f;color:white;padding:13px 18px;border-radius:999px;font-weight:800;box-shadow:0 8px 22px rgba(0,0,0,.18)}
+.footer{background:#243528;color:white;text-align:center;padding:40px 20px}
+@media(max-width:900px){
+ .hero h1{font-size:40px}.grid,.grid2,.ebook-grid{grid-template-columns:1fr}.nav-links{display:none}.hero{min-height:580px}.section{padding:48px 18px}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="nav">
+    <div class="logo">Mẹ Tôm Tép Tít</div>
+    <div class="nav-links">
+      <a href="#ebook">Ebook</a><a href="#coaching">Coaching</a><a href="#review">Review</a><a href="#dangky">Đăng ký</a>
+    </div>
+    <a class="cta" href="#dangky">Inbox tư vấn</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="badge">Dành cho ba mẹ có con sinh non</span>
+    <h1>Sinh non không phải là một hành trình mẹ phải đi một mình.</h1>
+    <p>Hồng đồng hành cùng ba mẹ bằng ebook, tư vấn nhanh và coaching 1:1 về chăm sóc, ăn ngủ, tăng cân, hô hấp, phát triển và giáo dục sớm cho trẻ sinh non.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#ebook">Xem bảng giá ebook</a>
+      <a class="btn secondary" href="#coaching">Xem gói coaching</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="grid2">
+    <div class="story">
+      <h2>Mẹ của 3 em bé sinh non</h2>
+      <p>Hồng là mẹ của Tôm 25 tuần 800g, Tép 35 tuần 2.85kg và Tít 33 tuần 2.4kg. Vì đã đi qua những ngày NICU, monitor, máy thở, tăng cân từng gram, ăn ngủ từng cữ nên những nội dung ở đây không chỉ là lý thuyết, mà là kinh nghiệm được hệ thống lại để ba mẹ dễ hiểu, dễ làm và bớt hoang mang.</p>
+    </div>
+    <div class="card">
+      <div class="image-box">ẢNH HỒNG + TÔM TÉP TÍT / ẢNH BÌA KÊNH</div>
+      <h3>Thông điệp của kênh</h3>
+      <p>Không dọa mẹ. Không thần thánh hóa. Không bán nỗi sợ. Chỉ giúp ba mẹ hiểu đúng, theo dõi đúng và chăm con bình tĩnh hơn.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ebook" class="section">
+  <div class="section-title">
+    <h2>Thư viện Ebook Sinh Non</h2>
+    <p>Mỗi ebook đi sâu vào một nhóm vấn đề ba mẹ hay gặp: NICU, ăn ngủ, tăng cân, hô hấp, phát triển não bộ, giáo dục sớm và các sai lầm cần tránh.</p>
+  </div>
+  <div class="ebook-grid">
+    <div class="ebook"><div class="cover">Ebook 1<br>Kiến thức cơ bản</div></div>
+    <div class="ebook"><div class="cover">Ebook 2<br>Não bộ - phát triển</div></div>
+    <div class="ebook"><div class="cover">Ebook 3<br>Tâm lý của mẹ</div></div>
+    <div class="ebook"><div class="cover">Ebook 4<br>Nuôi theo giai đoạn</div></div>
+    <div class="ebook"><div class="cover">Ebook 5<br>Sai lầm cần tránh</div></div>
+    <div class="ebook"><div class="cover">Ebook 6<br>Giáo dục sớm</div></div>
+    <div class="ebook"><div class="cover">Ebook 7<br>Ăn - Ngủ - Tăng cân</div></div>
+    <div class="ebook"><div class="cover">Ebook 8<br>Dinh dưỡng - vi chất</div></div>
+    <div class="ebook"><div class="cover">Ebook 9<br>Hô hấp - RSV</div></div>
+    <div class="ebook"><div class="cover">Ebook 10<br>Rèn ăn</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="grid2">
+    <div class="card">
+      <div class="image-box">ẢNH MOCKUP COMBO EBOOK</div>
+      <h3>Bảng giá Ebook</h3>
+      <div class="price-list">
+        <div class="price-line"><span>Ebook từng quyển</span><b>39k</b></div>
+        <div class="price-line"><span>Combo 3 quyển tự chọn</span><b>109k</b></div>
+        <div class="price-line"><span>Combo 6 quyển tự chọn</span><b>219k</b></div>
+        <div class="price-line"><span>Combo 10 quyển</span><b>329k</b></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-box">ẢNH MẸ ĐỌC EBOOK / CHECKLIST</div>
+      <h3>Ebook phù hợp với ai?</h3>
+      <div class="feature"><div class="icon">✓</div><div>Ba mẹ có con sinh non vừa xuất viện hoặc chuẩn bị xuất viện.</div></div>
+      <div class="feature"><div class="icon">✓</div><div>Ba mẹ đang lo về ăn, ngủ, tăng cân, hô hấp, vận động, phát triển.</div></div>
+      <div class="feature"><div class="icon">✓</div><div>Ba mẹ muốn có tài liệu hệ thống, dễ đọc, dễ tra lại khi cần.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="coaching" class="section">
+  <div class="section-title">
+    <h2>Coaching 1:1 cùng Hồng</h2>
+    <p>Dành cho ba mẹ cần đi sâu vào tình trạng riêng của con, cần người nghe vấn đề, bóc tách hướng xử lý và đồng hành theo từng giai đoạn.</p>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <div class="image-box">ẢNH DỊCH VỤ COACHING</div>
+      <h3>Bảng giá Coaching</h3>
+      <div class="price-list">
+        <div class="price-line"><span>1:1 cho 1 chủ đề</span><b>1.000k</b></div>
+        <div class="price-line"><span>1:1 cho 3 vấn đề</span><b>2.500k</b></div>
+        <div class="price-line"><span>Toàn bộ trong 3 tháng</span><b>3.000k</b></div>
+        <div class="price-line"><span>Toàn bộ 6 tháng</span><b>5.500k</b></div>
+        <div class="price-line"><span>9 tháng tặng 3 tháng</span><b>7.000k</b></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-box">ẢNH CUỘC GỌI / TƯ VẤN</div>
+      <h3>Coaching có thể hỗ trợ</h3>
+      <div class="feature"><div class="icon">1</div><div>Nhìn lại lịch sử sinh non, xuất viện, bệnh nền, ăn ngủ và tăng trưởng của con.</div></div>
+      <div class="feature"><div class="icon">2</div><div>Sắp xếp thứ tự ưu tiên: việc nào cần làm trước, việc nào không nên vội.</div></div>
+      <div class="feature"><div class="icon">3</div><div>Đồng hành để mẹ bớt rối, bớt tự trách và có kế hoạch chăm con rõ hơn.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="grid2">
+    <div class="card">
+      <div class="image-box">ẢNH TƯ VẤN NHANH</div>
+      <h3>Tư vấn nhanh</h3>
+      <div class="price-list">
+        <div class="price-line"><span>30 phút</span><b>250k</b></div>
+        <div class="price-line"><span>90 phút</span><b>600k</b></div>
+      </div>
+      <p>Phù hợp khi ba mẹ có một vấn đề cụ thể cần hỏi nhanh: lịch ăn, lịch ngủ, tăng cân, dấu hiệu cần theo dõi, chuẩn bị câu hỏi trước khi đi khám.</p>
+    </div>
+    <div class="card">
+      <div class="image-box">ẢNH CHECKLIST ĐĂNG KÝ</div>
+      <h3>Trước khi tư vấn ba mẹ chuẩn bị</h3>
+      <p>Tuổi thai khi sinh, cân nặng lúc sinh, cân nặng hiện tại, tuổi thật, tuổi hiệu chỉnh, lịch ăn ngủ 24h gần nhất, bệnh sử chính, thuốc/sữa đang dùng và câu hỏi muốn ưu tiên.</p>
+    </div>
+  </div>
+</section>
+
+<section id="review" class="section">
+  <div class="section-title">
+    <h2>Review từ phụ huynh</h2>
+    <p>Khu vực này Hồng có thể thay bằng ảnh chụp tin nhắn, feedback hoặc câu chuyện thật từ các mẹ trong cộng đồng.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="image-box">ẢNH REVIEW 1</div><p class="testimonial">“Sau khi đọc ebook, mình hiểu tuổi hiệu chỉnh và bớt so sánh con với trẻ đủ tháng.”</p></div>
+    <div class="card"><div class="image-box">ẢNH REVIEW 2</div><p class="testimonial">“Tư vấn xong mình biết nên ưu tiên vấn đề nào trước, không còn rối như trước.”</p></div>
+    <div class="card"><div class="image-box">ẢNH REVIEW 3</div><p class="testimonial">“Nội dung dễ hiểu, đúng những gì mẹ sinh non cần trong giai đoạn đầu.”</p></div>
+  </div>
+</section>
+
+<section id="dangky" class="section">
+  <div class="card" style="text-align:center;background:linear-gradient(135deg,#dcebd6,#fff7ec)">
+    <h2>Muốn mua ebook hoặc đặt lịch tư vấn?</h2>
+    <p>Ba mẹ inbox Hồng, gửi tình trạng hiện tại của con và chọn gói phù hợp. Hồng sẽ hướng dẫn bước tiếp theo.</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a class="btn primary" href="#">Inbox Facebook</a>
+      <a class="btn secondary" href="#">Nhắn Zalo</a>
+    </div>
+  </div>
+</section>
+
+<div class="floating">
+  <a href="#dangky">Inbox</a>
+  <a href="#ebook">Ebook</a>
+</div>
+
+<footer class="footer">
+  <h3>Mẹ Tôm Tép Tít</h3>
+  <p>Sinh non không đơn độc. Ba mẹ hiểu đúng, con được đồng hành đúng.</p>
+</footer>
+</body>
+</html>
