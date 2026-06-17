@@ -17,7 +17,7 @@ img{max-width:100%}
 .logo{font-weight:800;color:var(--dark);font-size:20px}
 .nav-links{display:flex;gap:18px;font-size:14px}
 .nav .cta{background:var(--green);color:white;padding:10px 16px;border-radius:999px;font-weight:700}
-.hero{min-height:680px;background:linear-gradient(rgba(36,53,40,.45),rgba(36,53,40,.35)),url('https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1600&q=80') center/cover;display:flex;align-items:center}
+.hero{min-height:680px;background:linear-gradient(rgba(36,53,40,.45),rgba(36,53,40,.35)),url('images/1781664721266_2333505777871480900_2333505777871480900_390cbe8be61e8a2e43da667717117563.jpg') center/cover;display:flex;align-items:center}
 .hero-inner{max-width:1180px;margin:auto;padding:80px 20px;color:white}
 .badge{display:inline-block;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.45);padding:8px 14px;border-radius:999px;font-weight:700}
 .hero h1{font-size:56px;line-height:1.1;margin:22px 0 18px;max-width:760px}
@@ -33,7 +33,8 @@ img{max-width:100%}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
 .card{background:white;border-radius:26px;padding:28px;box-shadow:0 12px 35px rgba(52,72,54,.09);border:1px solid #edf0e7}
-.image-box{height:230px;border-radius:22px;background:linear-gradient(135deg,#dcebd6,#fff7ec);display:flex;align-items:center;justify-content:center;color:#71806e;font-weight:800;text-align:center;margin-bottom:20px;border:2px dashed #a9c5a2}
+.image-box{height:230px;border-radius:22px;background:linear-gradient(135deg,#dcebd6,#fff7ec);display:flex;align-items:center;justify-content:center;color:#71806e;font-weight:800;text-align:center;margin-bottom:20px;border:2px dashed #a9c5a2;overflow:hidden}
+.image-box img{width:100%;height:100%;object-fit:cover;display:block}
 .card h3{font-size:24px;color:var(--dark);margin:0 0 10px}
 .price-list{font-size:19px}
 .price-line{display:flex;justify-content:space-between;gap:16px;border-bottom:1px dashed #dce3d6;padding:12px 0}
@@ -42,7 +43,8 @@ img{max-width:100%}
 .icon{width:34px;height:34px;border-radius:50%;background:var(--green2);display:flex;align-items:center;justify-content:center;flex:0 0 34px}
 .ebook-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .ebook{background:white;border-radius:18px;padding:14px;box-shadow:0 8px 24px rgba(52,72,54,.08)}
-.cover{height:160px;border-radius:14px;background:linear-gradient(160deg,#bcd7b7,#fff4df);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;color:#3f5a3c;padding:10px}
+.cover{height:160px;border-radius:14px;background:linear-gradient(160deg,#bcd7b7,#fff4df);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;color:#3f5a3c;padding:10px;overflow:hidden}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
 .story{background:#eaf4e6;border-radius:34px;padding:42px}
 .testimonial{font-style:italic}
 .floating{position:fixed;right:18px;bottom:18px;z-index:20;display:flex;flex-direction:column;gap:10px}
@@ -83,7 +85,7 @@ img{max-width:100%}
       <p>Hồng là mẹ của Tôm 25 tuần 800g, Tép 35 tuần 2.85kg và Tít 33 tuần 2.4kg. Vì đã đi qua những ngày NICU, monitor, máy thở, tăng cân từng gram, ăn ngủ từng cữ nên những nội dung ở đây không chỉ là lý thuyết, mà là kinh nghiệm được hệ thống lại để ba mẹ dễ hiểu, dễ làm và bớt hoang mang.</p>
     </div>
     <div class="card">
-      <div class="image-box">ẢNH HỒNG + TÔM TÉP TÍT / ẢNH BÌA KÊNH</div>
+      <div class="image-box"><img src="images/1781664724523_2333505777871480900_2333505777871480900_3b3d2c9d1aab4439fe0df81011fc0947.jpg" alt="Hồng cùng các bé Tôm Tép Tít" /></div>
       <h3>Thông điệp của kênh</h3>
       <p>Không dọa mẹ. Không thần thánh hóa. Không bán nỗi sợ. Chỉ giúp ba mẹ hiểu đúng, theo dõi đúng và chăm con bình tĩnh hơn.</p>
     </div>
@@ -96,23 +98,23 @@ img{max-width:100%}
     <p>Mỗi ebook đi sâu vào một nhóm vấn đề ba mẹ hay gặp: NICU, ăn ngủ, tăng cân, hô hấp, phát triển não bộ, giáo dục sớm và các sai lầm cần tránh.</p>
   </div>
   <div class="ebook-grid">
-    <div class="ebook"><div class="cover">Ebook 1<br>Kiến thức cơ bản</div></div>
-    <div class="ebook"><div class="cover">Ebook 2<br>Não bộ - phát triển</div></div>
-    <div class="ebook"><div class="cover">Ebook 3<br>Tâm lý của mẹ</div></div>
-    <div class="ebook"><div class="cover">Ebook 4<br>Nuôi theo giai đoạn</div></div>
-    <div class="ebook"><div class="cover">Ebook 5<br>Sai lầm cần tránh</div></div>
-    <div class="ebook"><div class="cover">Ebook 6<br>Giáo dục sớm</div></div>
-    <div class="ebook"><div class="cover">Ebook 7<br>Ăn - Ngủ - Tăng cân</div></div>
-    <div class="ebook"><div class="cover">Ebook 8<br>Dinh dưỡng - vi chất</div></div>
-    <div class="ebook"><div class="cover">Ebook 9<br>Hô hấp - RSV</div></div>
-    <div class="ebook"><div class="cover">Ebook 10<br>Rèn ăn</div></div>
+    <div class="ebook"><div class="cover"><img src="images/1781664727825_2333505777871480900_2333505777871480900_b693957db24baafb1a823116ba10075f.jpg" alt="Ebook 1 - Kiến thức cơ bản" /></div></div>
+    <div class="ebook"><div class="cover"><img src="images/1781664731128_2333505777871480900_2333505777871480900_8dc4a3710becb2133895811ce63b34a3.jpg" alt="Ebook 2 - Não bộ và phát triển" /></div></div>
+    <div class="ebook"><div class="cover"><img src="images/1781664734395_2333505777871480900_2333505777871480900_0d1617c23d50f283a01a1322f5dc7687.jpg" alt="Ebook 3 - Tâm lý của mẹ" /></div></div>
+    <div class="ebook"><div class="cover"><img src="images/1781664737476_2333505777871480900_2333505777871480900_0d18c903f9a3c4e08ea9cd16c85076d6.jpg" alt="Ebook 4 - Nuôi theo giai đoạn" /></div></div>
+    <div class="ebook"><div class="cover"><img src="images/1781664741384_2333505777871480900_2333505777871480900_bfdbc42847bbd4460adb894cc475d77b.jpg" alt="Ebook 5 - Sai lầm cần tránh" /></div></div>
+    <div class="ebook"><div class="cover"><img src="images/1781664744486_2333505777871480900_2333505777871480900_e9593915d8564c31110b8b17ceb993c6.jpg" alt="Ebook 6 - Giáo dục sớm" /></div></div>
+    <div class="ebook"><div class="cover"><img src="images/1781664748047_2333505777871480900_2333505777871480900_5dbe3708c5dbeaee646fa0e4d7d36de5.jpg" alt="Ebook 7 - Ăn ngủ tăng cân" /></div></div>
+    <div class="ebook"><div class="cover"><img src="images/1781664751150_2333505777871480900_2333505777871480900_e4607232b7f5284fb784ab823285b495.jpg" alt="Ebook 8 - Dinh dưỡng vi chất" /></div></div>
+    <div class="ebook"><div class="cover"><img src="images/1781664775724_2333505777871480900_2333505777871480900_27b6058249489ecc96ab530fae1d2520.jpg" alt="Ebook 9 - Hô hấp RSV" /></div></div>
+    <div class="ebook"><div class="cover"><img src="images/1781664778630_2333505777871480900_2333505777871480900_bfe13ea0f6075e97c6f578db7e2ffdca.jpg" alt="Ebook 10 - Rèn ăn" /></div></div>
   </div>
 </section>
 
 <section class="section">
   <div class="grid2">
     <div class="card">
-      <div class="image-box">ẢNH MOCKUP COMBO EBOOK</div>
+      <div class="image-box"><img src="images/1781664783926_2333505777871480900_2333505777871480900_435ba61fa2504fc146fdf623d6dc2d90.jpg" alt="Mockup combo ebook" /></div>
       <h3>Bảng giá Ebook</h3>
       <div class="price-list">
         <div class="price-line"><span>Ebook từng quyển</span><b>39k</b></div>
@@ -122,7 +124,7 @@ img{max-width:100%}
       </div>
     </div>
     <div class="card">
-      <div class="image-box">ẢNH MẸ ĐỌC EBOOK / CHECKLIST</div>
+      <div class="image-box"><img src="images/1781664783939_2333505777871480900_2333505777871480900_674c610bcecd0f3ee1e2933d2e798973.jpg" alt="Mẹ đọc ebook và checklist" /></div>
       <h3>Ebook phù hợp với ai?</h3>
       <div class="feature"><div class="icon">✓</div><div>Ba mẹ có con sinh non vừa xuất viện hoặc chuẩn bị xuất viện.</div></div>
       <div class="feature"><div class="icon">✓</div><div>Ba mẹ đang lo về ăn, ngủ, tăng cân, hô hấp, vận động, phát triển.</div></div>
@@ -138,7 +140,7 @@ img{max-width:100%}
   </div>
   <div class="grid2">
     <div class="card">
-      <div class="image-box">ẢNH DỊCH VỤ COACHING</div>
+      <div class="image-box"><img src="images/1781664787087_2333505777871480900_2333505777871480900_19b5f3d3c4fc33bc24df3706e19fca07.jpg" alt="Dịch vụ coaching 1-1" /></div>
       <h3>Bảng giá Coaching</h3>
       <div class="price-list">
         <div class="price-line"><span>1:1 cho 1 chủ đề</span><b>1.000k</b></div>
@@ -149,7 +151,7 @@ img{max-width:100%}
       </div>
     </div>
     <div class="card">
-      <div class="image-box">ẢNH CUỘC GỌI / TƯ VẤN</div>
+      <div class="image-box"><img src="images/1781664787101_2333505777871480900_2333505777871480900_246220965374488515083ca1895bed76.jpg" alt="Cuộc gọi tư vấn" /></div>
       <h3>Coaching có thể hỗ trợ</h3>
       <div class="feature"><div class="icon">1</div><div>Nhìn lại lịch sử sinh non, xuất viện, bệnh nền, ăn ngủ và tăng trưởng của con.</div></div>
       <div class="feature"><div class="icon">2</div><div>Sắp xếp thứ tự ưu tiên: việc nào cần làm trước, việc nào không nên vội.</div></div>
@@ -161,7 +163,7 @@ img{max-width:100%}
 <section class="section">
   <div class="grid2">
     <div class="card">
-      <div class="image-box">ẢNH TƯ VẤN NHANH</div>
+      <div class="image-box"><img src="images/1781664789956_2333505777871480900_2333505777871480900_43fe38e397e9828283f5e827a9f0b3e4.jpg" alt="Tư vấn nhanh" /></div>
       <h3>Tư vấn nhanh</h3>
       <div class="price-list">
         <div class="price-line"><span>30 phút</span><b>250k</b></div>
@@ -170,7 +172,7 @@ img{max-width:100%}
       <p>Phù hợp khi ba mẹ có một vấn đề cụ thể cần hỏi nhanh: lịch ăn, lịch ngủ, tăng cân, dấu hiệu cần theo dõi, chuẩn bị câu hỏi trước khi đi khám.</p>
     </div>
     <div class="card">
-      <div class="image-box">ẢNH CHECKLIST ĐĂNG KÝ</div>
+      <div class="image-box"><img src="images/1781664789968_2333505777871480900_2333505777871480900_a24842ae72380904c380be83206d16ce.jpg" alt="Checklist đăng ký tư vấn" /></div>
       <h3>Trước khi tư vấn ba mẹ chuẩn bị</h3>
       <p>Tuổi thai khi sinh, cân nặng lúc sinh, cân nặng hiện tại, tuổi thật, tuổi hiệu chỉnh, lịch ăn ngủ 24h gần nhất, bệnh sử chính, thuốc/sữa đang dùng và câu hỏi muốn ưu tiên.</p>
     </div>
@@ -183,9 +185,9 @@ img{max-width:100%}
     <p>Khu vực này Hồng có thể thay bằng ảnh chụp tin nhắn, feedback hoặc câu chuyện thật từ các mẹ trong cộng đồng.</p>
   </div>
   <div class="grid">
-    <div class="card"><div class="image-box">ẢNH REVIEW 1</div><p class="testimonial">“Sau khi đọc ebook, mình hiểu tuổi hiệu chỉnh và bớt so sánh con với trẻ đủ tháng.”</p></div>
-    <div class="card"><div class="image-box">ẢNH REVIEW 2</div><p class="testimonial">“Tư vấn xong mình biết nên ưu tiên vấn đề nào trước, không còn rối như trước.”</p></div>
-    <div class="card"><div class="image-box">ẢNH REVIEW 3</div><p class="testimonial">“Nội dung dễ hiểu, đúng những gì mẹ sinh non cần trong giai đoạn đầu.”</p></div>
+    <div class="card"><div class="image-box"><img src="images/1781664792733_2333505777871480900_2333505777871480900_c470435af1df8caa5ba45d7068e9c8b4.jpg" alt="Review phụ huynh 1" /></div><p class="testimonial">“Sau khi đọc ebook, mình hiểu tuổi hiệu chỉnh và bớt so sánh con với trẻ đủ tháng.”</p></div>
+    <div class="card"><div class="image-box"><img src="images/1781664792747_2333505777871480900_2333505777871480900_cd36bd56538bbca510470cc7277c58a3.jpg" alt="Review phụ huynh 2" /></div><p class="testimonial">“Tư vấn xong mình biết nên ưu tiên vấn đề nào trước, không còn rối như trước.”</p></div>
+    <div class="card"><div class="image-box"><img src="images/1781664796026_2333505777871480900_2333505777871480900_d12f72a927d86bc60f2d5282ea53c4f9.jpg" alt="Review phụ huynh 3" /></div><p class="testimonial">“Nội dung dễ hiểu, đúng những gì mẹ sinh non cần trong giai đoạn đầu.”</p></div>
   </div>
 </section>
 
